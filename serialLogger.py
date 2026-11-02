@@ -1,10 +1,7 @@
 """
 Serial Data Logger for Load Cell Force Measurements
 This script connects to a microcontroller (e.g., Arduino) via a serial COM port, 
-reads incoming comma-separated data (Time, Reading), and logs it to a CSV file.
-Logging can be started and paused interactively by pressing the 'Space' bar.
-When logging begins, the time is normalized so the first recorded data point 
-always starts at t=0 seconds.
+and reads incoming comma-separated data (Time, Reading), and logs it to a CSV file.
 """
 
 import serial
