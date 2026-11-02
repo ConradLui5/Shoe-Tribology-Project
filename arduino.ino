@@ -18,7 +18,7 @@ void setup() {
   ads.setDataRate(RATE_ADS1115_860SPS); 
   ads.setGain(GAIN_ONE); 
   
-  //creation of zero offset
+  // Creation of zero offset
   float sum = 0;
   for(int i = 0; i < 10; i++) {
     //Reading raw data
@@ -33,16 +33,16 @@ void setup() {
 }
 
 void loop() {
-  // Read raw data from channel A0
+  //Read raw data from channel A0
   int16_t adc0 = ads.readADC_SingleEnded(0);
   
-  // Calculate the exact voltage
+  //Calculate the exact voltage
   float volts = ads.computeVolts(adc0);
 
-  //convert voltage to newtons using calculated calibration factor
+  //Convert voltage to newtons using calculated calibration factor
   float force = (volts - zeroOffset) * calibrationFactor;
 
-  // CSV formatted output
+  //CSV formatted output
   float time = millis();
   if(time >= 0){
     Serial.print(time);
